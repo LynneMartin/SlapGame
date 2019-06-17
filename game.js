@@ -31,19 +31,19 @@ function update() {
 
 // health damage count on attack click
 function hairPull() {
-  health -= 1 // + addMods()
+  health -= 1 + addMods()
   hits += 1;
   update()
 }
 
 function scratch() {
-  health -= 5;
+  health -= 5 + addMods()
   hits += 1;
   update()
 }
 
 function boobPunch() {
-  health -= 10;
+  health -= 10 + addMods()
   hits += 1;
   update();
 }
@@ -61,7 +61,6 @@ function reset() {
   update();
 }
 
-
 let items = {
   proteinBar: { name: 'Kälteen Protein Bar', modifier: 2, description: 'Tasty, but makes target gain weight quickly.' },
   hairspray: { name: 'Hairspray In Eyes', modifier: 4, description: 'It burns!' },
@@ -73,13 +72,20 @@ function addItem(itemName) {
   charItems.push(items[itemName])
 }
 
+// **DOES NOT WORK**
 function addMods() {
   // create a modifierTotal variable set to 0
+  let modifierTotal = 0;
   // loop over the charItems array and for each element in the array
+  for (let i = 0; i < charItems.length; i++) {
+    let item = charItems[i]
+    modifierTotal += item.modifier
+
+  }
   // add the modifier value of the item to the modifierTotal variable
   //return the modifierTotal
+  return modifierTotal
 }
-
 
 
 // update();
