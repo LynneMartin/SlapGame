@@ -17,35 +17,50 @@
       <div class="col-sm-6">
         <h1>Mean Girls Fight Club</h1>
 
-        <span>Health:<span id="health"> 100</span></span>
+        <span>Name:<span id="target-name"> The Plastics</span>
+          <br>
 
+          <span>Hits:</span id="hits"> 0</span>
+        <br>
 
-        <img id="victim-photo" scr="" width="200">
+        <span>Health:<span id="health"> 100</span>
 
-        <img src="mean-girls.jpg"></img>
+          <meter id="health-meter" low="0.4" optimum="0.2" high="0.8" value="0.0"></meter>
+          <br>
 
-        <h3>Choose Your Punishment!</h3>
+          <img src="mean-girls.jpg" width="200"></img>
 
-        <button class="hair-pull-button" onclick="hairPull()">
-          <img class="button-image" src="">
-          <p>Hair Pull</p>
-        </button>
+          <h3>Choose Your Punishment!</h3>
+          <!--Attack buttons-->
+          <button class="hair-pull-button" onclick="hairPull()">
+            <img class="btn btn-info" src="">
+            <p>Hair Pull</p>
+          </button>
 
-        <button class="scratch-button" onclick="scratch()">
-          <img class="button-image" scr="">
-          <p>Scratch</p>
-        </button>
+          <button class="scratch-button" onclick="scratch()">
+            <img class="btn btn-warning" scr="">
+            <p>Scratch</p>
+          </button>
 
-        <button class="boob-punch" onclick="boobPunch()">
-          <img class="button-image" src="">
-          <p>Boob Punch</p>
-        </button>
+          <button class="boob-punch" onclick="boobPunch()">
+            <img class="btn btn-danger" src="">
+            <p>Boob Punch</p>
+          </button>
+          <br>
 
-        <!-- power up -->
-        <button class="hump-day-treat" onclick="humpDayTreat()">
-          <img class="button-image" src="">
-          <p>Hump Day Treat</p>
-        </button>
+          <!-- power up -->
+          <div>
+            <h3>Need a pick-me-up?</h3>
+            <button class="hump day treat btn-success" onclick="humpDayTreat()">
+              <p>Mom's Frozen Margaritas</p>
+            </button>
+          </div>
+          <br>
+
+          <!--reset button-->
+          <div>
+            <button class="btn-secondary m-1" onClick="reset(0)">Reset</button>
+          </div>
 
       </div>
     </div>

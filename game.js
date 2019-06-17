@@ -1,59 +1,66 @@
 
-let health = 100;
+let maxHealth = 100;
+let health = maxHealth;
 let hits = 0;
-let safe = 0;
+let name = "The Plastics"
 let targetHealth = document.getElementById("health")
 
+// individual targets
+// let meanGirl = {
+// name: "Regina George",
+// moods: [{
+//    mood: "What are you looking at?"
+//    image: ""
+//  },
+//  {
+//    mood: "Annoyed",
+//    image: ""
+//  },
+//  {
+//    mood: "Injured",
+//    image: ""
+//  }
+//}],
 
 
-let meanGirl = {
-  name: "Regina George",
-  moods: [{
-    mood: "What are you looking at?"
-    image: ""
-  },
-  {
-    mood: "Annoyed",
-    image: ""
-  },
-  {
-    mood: "Injured",
-    image: ""
-  }
-}],
 
-
-
+// health damage count on attack click
 function hairPull() {
-  health -= 1
-  targetHealth.innerText = health.toString()
+  health -= 1;
+  hits += 1; // **not working**
+  targetHealth.innerText = health.toString();
 }
 
 function scratch() {
-  health -= 5
+  health -= 5;
+  hits += 1; // **not working**
   targetHealth.innerText = health.toString()
 }
 
 function boobPunch() {
-  health -= 10
-  targetHealth.innerText = health.toString()
+  health -= 10;
+  hits += 1; // **not working**
+  targetHealth.innerText = health.toString();
 }
 
+// power up
 function humpDayTreat() {
-  health += 20
-  targetHealth.innerText = health.toString()
+  health += 10
+  targetHealth.innerText = health.toString();
 }
 
+// reset hit count to 0 and health to 100 ***NOT WORKING***
+function reset() {
+  health = 100;
+  hits = 0;
+  update();
+}
 
+// ***NOT UNDERSTANDING ITEM/MODIFIER REQUIREMENT***
+//let items = {
+//item: { name: '', modifier: 2, description: '' }
+//item: { name: '', modifier: 4, description: '' }
+//item: { name: '', modifier: 6, description: '' }
+//}
 
-
-// let hitDamage = {
-//   this.name = name;
-//   this.damage = damage;
-// }
-
-// let hitDamages = {
-//   hairPull: new hitDamage("hair-pull", -= 1);
-//   scratch: new hitDamage("scratch", -= 5);
-//   boobPunch: new hitDamage("boob-punch", -= 10)
-// }
+update();
